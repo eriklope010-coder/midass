@@ -1,0 +1,37 @@
+# Generate the Xcode project with XcodeGen:  brew install xcodegen && xcodegen
+name: JarvisMidas
+options:
+  bundleIdPrefix: com.midas
+  deploymentTarget:
+    iOS: "17.0"
+targets:
+  JarvisMidas:
+    type: application
+    platform: iOS
+    sources: [JarvisMidas]
+    settings:
+      base:
+        PRODUCT_NAME: Jarvis
+        PRODUCT_BUNDLE_IDENTIFIER: com.midas.jarvis   # change to your own reverse-domain id
+        SWIFT_VERSION: "5.9"
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        DEVELOPMENT_TEAM: ""   # set your Apple team id in Xcode › Signing
+    info:
+      path: JarvisMidas/Info.plist
+      properties:
+        CFBundleDisplayName: Jarvis
+        UILaunchScreen: { UIColorName: "" }
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+        UIUserInterfaceStyle: Dark
+        NSMicrophoneUsageDescription: "Jarvis escucha tu voz solo durante una llamada que tú inicias."
+        NSSpeechRecognitionUsageDescription: "Jarvis convierte tu voz en texto para entenderte. Se hace en el iPhone cuando el dispositivo lo permite."
+        NSRemindersFullAccessUsageDescription: "Jarvis crea los recordatorios que le pides."
+        NSRemindersUsageDescription: "Jarvis crea los recordatorios que le pides."
+        LSApplicationQueriesSchemes: [whatsapp, spotify, instagram, snssdk1233, plex]
+        # Keeps an ACTIVE, user-started call running when you switch apps or lock the screen.
+        # The microphone indicator stays visible. Nothing listens outside a call.
+        UIBackgroundModes: [audio]
+        CFBundleURLTypes:
+          - CFBundleURLName: com.midas.jarvis
+            CFBundleURLSchemes: [jarvismidas]

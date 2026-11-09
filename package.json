@@ -1,0 +1,9 @@
+{
+  "name": "jarvis-midas-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Secure AI proxy for JARVIS MIDAS (keeps the Anthropic key off the phone)",
+  "main": "server.js",
+  "engines": { "node": ">=18" },
+  "scripts": { "start": "node server.js" }
+}
